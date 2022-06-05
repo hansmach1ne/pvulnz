@@ -25,3 +25,8 @@ optional arguments:
   -r, --recursive  Look recursively from current directory.
   -h, --help       Show this help message and exit.
 ```
+
+## Example
+`pvulnz -r`  
+
+![Capture](https://user-images.githubusercontent.com/57464251/172067908-16967270-00f9-4ba1-b31e-9732a113ecf2.PNG)
