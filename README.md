@@ -10,7 +10,7 @@ It will print out 'dangerous' lines with functions defined inside 'functions.txt
 `echo -e -n "\nalias pvulnz=\"python3 $pDir/pvulnz.py\"" >> ~/.bashrc`  
 `source ~/.bashrc`  
 `pip3 install -r requirements.txt`  
-`pvulnz.py -h`  
+`pvulnz -h`  
 
 ## -h, --help
 ```
