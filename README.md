@@ -23,6 +23,5 @@ positional arguments:
 
 optional arguments:
   -r, --recursive  Look recursively from current directory.
-  -e <extension>   Specify what file extension to look at.
   -h, --help       Show this help message and exit.
 ```
