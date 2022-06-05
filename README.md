@@ -14,7 +14,7 @@ It will print out 'dangerous' lines with functions defined inside 'functions.txt
 
 ## -h, --help
 ```
-usage: vulnz.py [-r] [-e <extension>] [-h] [files ...]
+usage: vulnz.py [-r] [-h] [files ...]
 
 pvulnz, PHP source code vulnerability scanner/dangerous function echoing tool
 
