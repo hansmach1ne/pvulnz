@@ -37,11 +37,8 @@ def main():
             if(os.path.isdir(path)):
                 continue
             else:
-                
-                if(args.e):
-                    print(str(path))
-                    if(not str(path).endswith(".".join(args.e))):
-                        continue
+                if(".php" not in str(path)):
+                    continue
                 #Loop through each file in a current directory
                 with open(path, "r", encoding = "utf-8", errors="ignore") as f:
                     fileLines = [i.strip() for i in f]
@@ -63,7 +60,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="vulnz, Mach1ne's tool for finding php source code vulns.", add_help=False)
     parser.add_argument("files", type=str, metavar="file(s)", nargs = "*", help="\t\t Specify php file(s) to look at, '*' for all.")
     parser.add_argument("-r", "--recursive", action = "store_true", dest="recurse", help="\t\t Look recursively from current directory.")
-    parser.add_argument("-e", metavar="<extension>", dest="e", help="\t\t Specify what file extension to look at.") 
     parser.add_argument('-h', '--help', action="help", default=argparse.SUPPRESS, help='\t\t Show this help message and exit.') 
     args = parser.parse_args()
     
