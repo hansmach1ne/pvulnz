@@ -60,7 +60,7 @@ def main():
                                 pass
 if __name__ == "__main__":
 
-    parser = argparse.ArgumentParser(description="vulnz, Mach1ne's tool for finding php source code vulns.", add_help=False)
+    parser = argparse.ArgumentParser(description="pvulnz, PHP code echoing tool for open source security auditing", add_help=False)
     parser.add_argument("files", type=str, metavar="file(s)", nargs = "*", help="\t\t Specify php file(s) to look at, '*' for all.")
     parser.add_argument("-r", "--recursive", action = "store_true", dest="recurse", help="\t\t Look recursively from current directory.")
     parser.add_argument('-h', '--help', action="help", default=argparse.SUPPRESS, help='\t\t Show this help message and exit.') 
