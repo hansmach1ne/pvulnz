@@ -9,7 +9,10 @@ signal(SIGPIPE, SIG_DFL)
 
 def main():
     
-    with open("/home/kali/Private/vulnz/functions.txt", "r", errors="ignore") as functionsFile:
+    #Get script's location path
+    scriptPath = os.path.dirname(os.path.realpath(__file__))
+
+    with open(scriptPath + os.sep + "functions.txt", "r", errors="ignore") as functionsFile:
         functionLines = [i.strip() for i in functionsFile]
         
         filesToLook = []
