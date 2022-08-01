@@ -180,3 +180,5 @@ show_source
 php_strip_whitespace
 get_meta_tags
 unserialize
+fread
+stream_get_contents
