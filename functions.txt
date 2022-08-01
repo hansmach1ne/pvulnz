@@ -26,6 +26,7 @@ require_once(
 require_once $
 require_once _
 require_once (
+mail
 proc_open
 pcntl_exec
 assert
@@ -84,7 +85,6 @@ extract
 parse_str
 putenv
 ini_set
-mail
 header
 proc_nice
 proc_terminate
