@@ -40,7 +40,7 @@ def main():
             if(os.path.isdir(path)):
                 continue
             else:
-                if(".php" not in str(path)):
+                if(".php" not in str(path) or not str(path).endswith(".php")):
                     continue
                 #Loop through each file in a current directory
                 with open(path, "r", encoding = "utf-8", errors="ignore") as f:
