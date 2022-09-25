@@ -1,4 +1,9 @@
 echo
+file(
+curl_exec
+fgets
+xml_parse
+loadXML
 $_COOKIE
 $_GET
 $_POST
