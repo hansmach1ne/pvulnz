@@ -1,5 +1,6 @@
 # pvulnz
-Code echoing tool, useful for open source security auditing.
+
+PHP static analysis tool.
 
 It will print out 'dangerous' lines with functions defined inside 'functions.txt'.
 
