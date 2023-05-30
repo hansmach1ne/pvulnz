@@ -33,15 +33,10 @@ optional arguments:
 ```
 
 
+### Example hunt for XSS:
+`pvulnz -m -mr "echo.*\_REQUEST"`
+
+![REGEX](https://github.com/hansmach1ne/pvulnz/assets/57464251/7167721f-e97b-468e-9a08-decb4110535c)
 
 
-### Regex matching mode with custom written regex
-`pvulnz -r -m -mr "REGEX"`  
-
-### String matching mode with custom defined strings
-`pvulnz -r -m -ms "STRING"`
-
-### Functions recursive mode
-`pvulnz -r`  
-
-![Capture](https://user-images.githubusercontent.com/57464251/172067908-16967270-00f9-4ba1-b31e-9732a113ecf2.PNG)
+There are many possible XSS lines in the above image, and those could be a good starting point for research.
