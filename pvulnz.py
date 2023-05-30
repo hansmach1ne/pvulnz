@@ -7,10 +7,33 @@ import re
 from signal import signal, SIGPIPE, SIG_DFL
 from pathlib import Path
 
+TABLE = []
+
+def colorize_red(text, substring):
+    RED = '\033[91m'
+    RESET = '\033[0m'
+    colored_text = text.replace(substring, RED + substring + RESET)
+    return colored_text
+
+def colorize_regex_red(text, regex_pattern):
+    RED = '\033[91m'
+    RESET = '\033[0m'
+
+    # Find all matches of the regex pattern
+    matches = re.findall(regex_pattern, text)
+
+    # Color code each match to red
+    for match in matches:
+        colored_match = RED + match + RESET
+        text = text.replace(match, colored_match)
+
+    return text
+
 signal(SIGPIPE, SIG_DFL)
 
 scriptPath = os.path.dirname(os.path.realpath(__file__))
 functionFile = scriptPath + os.sep + "functions.txt"
+
 def modifyFunctions(line, mode):
     if(not os.access(functionFile, os.W_OK)):
         print("File: '" + functionFile + "' is not writeable. Exiting...")
@@ -84,12 +107,16 @@ def main():
                         #Match string
                         if(args.match_string):
                             if(args.match_string in j): 
-                                print("[MS] " + str(path) + ":" + str(count) + "\t" + j)
+                                if(str(path) + ":" + str(count)) not in TABLE:
+                                    TABLE.append(str(path) + ":" + str(count))
+                                    print("[MS] " + str(path) + ":" + str(count) + "\t" + colorize_red(j, args.match_string))
 
                         # Match regex
                         if(args.match_regex):
                             if(re.search(args.match_regex, j)):
-                                print("[MR] " + str(path) + ":" + str(count) + "\t" + j)
+                                if(str(path) + ":" + str(count)) not in TABLE:
+                                    TABLE.append(str(path) + ":" + str(count))
+                                    print("[MR] " + str(path) + ":" + str(count) + "\t" + colorize_regex_red(j, args.match_regex))
                         
                         # If match mode is activated, exit
                         if(args.match):
@@ -98,7 +125,9 @@ def main():
                         #Check if dangerous function is used with a variable
                         if(i in j and "$" in j):
                             try:
-                                print(str(path) + ":" + str(count) + "\t" + j)
+                                if(str(path) + ":" + str(count)) not in TABLE:
+                                    TABLE.append(str(path) + ":" + str(count))
+                                    print(str(path) + ":" + str(count) + "\t" + colorize_red(j,i))
                             except UnicodeDecodeError:
                                 pass
 if __name__ == "__main__":
