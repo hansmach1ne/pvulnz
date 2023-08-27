@@ -1,6 +1,6 @@
 # pvulnz
 
-Public version of custom PHP static analysis helper tool.
+Custom PHP static analysis helper tool.
 
 It will print out 'dangerous' lines with functions defined inside 'functions.txt'.
 
