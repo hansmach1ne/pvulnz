@@ -2,7 +2,7 @@
 
 Custom PHP static analysis helper tool.
 
-It will print out 'dangerous' lines with functions defined inside 'functions.txt'.
+It will print out 'dangerous' lines with functions defined inside 'functions.txt', or alternatively lines containing specific string or regex.
 
 ## Install For Bash
 `git clone https://github.com/hansmach1ne/pvulnz`  
